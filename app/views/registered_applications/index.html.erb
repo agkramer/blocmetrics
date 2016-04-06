@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>My Registered Applications</h1>
+
+<table class="table table-condensed table-hover">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Url</th>
+      <th colspan="3">Action</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @registered_applications.each do |registered_application| %>
+      <tr>
+        <% if registered_application.user_email == current_user.email %>
+          <td><%= registered_application.name %></td>
+          <td><%= registered_application.url %></td>
+          <td><%= link_to 'Show', registered_application %></td>
+          <td><%= link_to 'Edit', edit_registered_application_path(registered_application) %></td>
+          <td><%= link_to 'Destroy', registered_application, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Register a New Applicaiton', new_registered_application_path, class: 'btn btn-info' %>
