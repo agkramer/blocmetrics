@@ -15,6 +15,24 @@
   <%= @registered_application.events.each do |event| %>
     <%= event.name %>
   <% end %>
+
+  <table class="table table-condensed table-hover">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Number</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @registered_application.events.each do |event| %>
+        <tr>
+          <td><%= event.name %></td>
+          <td><%= event.name %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 </p>
 
 <%= link_to 'Edit', edit_registered_application_path(@registered_application) %> |
