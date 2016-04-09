@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  
+
   namespace :api, defaults: { format: :json } do
     resources :events, only: [:create]
   end
@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   end
 
   devise_for :users
+  match '/api/events', to: 'api/events#preflight', via: [:options]
 
   root 'welcome#index'
 
