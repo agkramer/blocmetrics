@@ -9,9 +9,8 @@ group :production do
 end
 
 group :development do
-  gem 'sqlite3'
+  gem 'pg'
   gem 'web-console', '~> 2.0'
-  gem 'pry'
 end
 
 gem 'sass-rails', '~> 5.0'
@@ -21,12 +20,13 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'figaro'
-gem 'pry'
 gem 'devise'
+gem 'chartkick'
+gem 'groupdate'
 
 
 group :development, :test do
-  gem 'byebug'
+  gem 'pry'
   gem 'spring'
   gem 'rspec-rails', '~> 3.0'
   gem 'shoulda'
