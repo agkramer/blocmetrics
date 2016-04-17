@@ -16,4 +16,4 @@
 !/log/.keep
 /tmp
 
-/config/environment.rb
+/config/environment.yml
